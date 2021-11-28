@@ -18,6 +18,6 @@ export class Car {
   @CreateDateColumn()
   created_at: Date;
 
-  @ManyToOne(() => User, (user) => user.cars, { eager: false })
+  @ManyToOne(() => User, (user) => user.cars, { eager: true })
   user: User;
 }

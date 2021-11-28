@@ -108,4 +108,21 @@ export class TiresService {
       .map((num) => parseInt(num));
     return { width, aspectRatio, wheelSize };
   }
+
+  async findTireListByUserId(
+    user_id: string,
+    limit: number,
+    offset: number,
+  ): Promise<{ count: number; tireList: Tire[] }> {
+    const [tireList, count] = await this.tiresRepository
+      .createQueryBuilder('tire')
+      .innerJoinAndSelect('tire.car', 'car')
+      .innerJoin('car.user', 'user')
+      .addSelect('user.user_id')
+      .where('user.user_id=:user_id', { user_id })
+      .take(limit)
+      .skip(offset)
+      .getManyAndCount();
+    return { count, tireList };
+  }
 }
