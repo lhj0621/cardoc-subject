@@ -16,6 +16,7 @@
 - 단, 결과 제출 시 README.md 파일에 실행 방법을 완벽히 서술하여 DB를 포함하여 전체적인 서버를 구동하는데 문제없도록 해야합니다.
 - 데이터베이스 관련처리는 raw query가 아닌 **ORM을 이용하여 구현**합니다.
 - Response Codes API를 성공적으로 호출할 경우 200번 코드를 반환하고, 그 외의 경우에는 아래의 코드로 반환합니다.
+
 ![image](https://user-images.githubusercontent.com/42320464/143786456-cc73718b-940d-4969-a48b-983717628ee4.png)
 
 
